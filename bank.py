@@ -21,10 +21,11 @@ def bank_details(argv=None):
 
     initial_balance = balance
 
+    # ✅ Correct transaction logic
     if transaction > 0:
         balance += transaction
         status = "Deposit Successful"
-    elif transaction <= balance:
+    elif abs(transaction) <= balance:
         balance += transaction
         status = "Withdrawal Successful"
     else:
